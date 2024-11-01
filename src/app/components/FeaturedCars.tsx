@@ -2,8 +2,6 @@
 
 import { useState } from 'react'; // Import `useState` from React to manage component state for the active tab.
 import CarCard from './CarCard'; // Import the CarCard component to render individual car details for each tab.
-import { networkInterfaces } from 'os';
-
 
 // Define the `Car` type for TypeScript to enforce a structure for each car's data.
 type Car = {
@@ -40,7 +38,6 @@ const FeaturedCars = () => {
             { imageSrc: '/Suzuki_Alto_-_PNG.png', name: 'Suzuki Alto', priceRange: 'PKR 23.3 - 30.5 lacs', reviews: 200, rating: 3 },
             { imageSrc: '/Honda_City_Front.jpg', name: 'Honda City', priceRange: 'PKR 46.5 - 58.5 lacs', reviews: 458, rating: 4 },
             { imageSrc: '/honda civic.jpg', name: 'Honda Civic', priceRange: 'PKR 86.6 - 99.0 lacs', reviews: 358, rating: 4 },
-
         ],
         // Fill 'upcoming' and 'newlyLaunched' arrays with placeholder car data to show "Coming Soon" information.
         upcoming: Array(4).fill(placeholderCar),       
@@ -90,4 +87,3 @@ const FeaturedCars = () => {
 };
 
 export default FeaturedCars;  // Export FeaturedCars component to be used in other parts of the app.
-networkInterfaces

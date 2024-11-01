@@ -1,7 +1,10 @@
 // D:\Governor NextJs\Project\cars-get-wings\src\app\layout.tsx
 
+"use client"; // Add this directive to make this file a client component
+
 import React from 'react';
-import Navbar from './components/Navbar';
+import { usePathname } from 'next/navigation'; // Use usePathname from next/navigation
+import Navbar from './components/Navbar'; // Importing Navbar
 import './globals.css'; // Ensure Tailwind CSS is configured correctly here
 
 type LayoutProps = {
@@ -9,6 +12,9 @@ type LayoutProps = {
 };
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
+  const pathname = usePathname(); // Get the current pathname
+  const isHomePage = pathname === '/'; // Check if the current route is the homepage
+
   return (
     <html lang="en">
       <head>
@@ -17,8 +23,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </head>
       <body className="bg-gray-50 text-gray-800 font-sans antialiased">
         
-        {/* Navbar */}
-        
+        {/* Render Navbar only on the homepage */}
+        {isHomePage && <Navbar />} {/* This will render Navbar only when on the homepage */}
 
         {/* Main Content */}
         <main className="container mx-auto p-4 mt-8">
@@ -38,4 +44,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 };
 
 export default Layout;
+
+
 

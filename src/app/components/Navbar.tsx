@@ -2,13 +2,8 @@ import React from 'react';        // Importing React, which lets us create compo
 import Link from 'next/link';     // 'next/link' is used for client-side navigation in Next.js, making links more efficient
 import Image from 'next/image';   // 'next/image' optimizes images for better performance, like automatic resizing and lazy loading
 
-// Defining an interface for props - here it's empty, but we could add properties like `logoSrc` or `links` later.
-interface NavbarProps {
-  // Any necessary props can be added here
-}
-
 // Creating the Navbar component as a functional component in TypeScript
-const Navbar: React.FC<NavbarProps> = () => {
+const Navbar: React.FC = () => {
   return (
     <nav className="bg-gray-900 text-white"> {/* Navbar with dark background and white text for contrast */}
       
@@ -17,14 +12,14 @@ const Navbar: React.FC<NavbarProps> = () => {
         
         {/* Left section: Contains the app download link with a reduced font size */}
         <div className="flex items-center space-x-3"> {/* space-x-3 creates a small gap between elements */}
-          <a href="/" className="text-red-500 text-xs"> {/* Smaller text and red color for emphasis */}
+          <Link href="/" className="text-red-500 text-xs"> {/* Changed to Link component */}
             📱 Download App via SMS
-          </a>
+          </Link>
         </div>
 
         {/* Right section: Language selection, Sign-Up, and Sign-In links */}
         <div className="flex items-center space-x-2 text-xs"> {/* text-xs for smaller font, space-x-2 for tighter spacing */}
-          <a href="/" className="text-red-500">اردو</a> {/* Urdu language link with red color */}
+          <Link href="/" className="text-red-500">اردو</Link> {/* Urdu language link with red color */}
           
           {/* Next.js Link components for Sign Up and Sign In */}
           <Link href="/signup" className="hover:text-red-500"> {/* hover:text-red-500 adds a hover effect in red */}
@@ -75,3 +70,4 @@ const Navbar: React.FC<NavbarProps> = () => {
 };
 
 export default Navbar;
+
