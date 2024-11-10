@@ -32,7 +32,7 @@ const Navbar: React.FC<NavbarProps> = () => {
 <div className="flex items-center mt-2 space-x-16 px-4 py-3">
     <Link href="/">
     <Image
-    src="https://wsa1.pakwheels.com/assets/new-pw-logo-white-c4cd16ae34613cc1fa16d7840f34a71e.svg"
+    src="/logo.png"
     alt="Pak-wheel"
     width={130}
     height={130}
