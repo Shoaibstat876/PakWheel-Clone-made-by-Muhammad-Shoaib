@@ -2,11 +2,12 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-// define interface for future use 
+/*// define interface for future use 
 interface NavbarProps {}
 
 // Creating a navbar as functional component
-const Navbar: React.FC<NavbarProps> = () => {  
+const Navbar: React.FC<NavbarProps> = () => {  */
+const Navbar: React.FC = () => {  // Removed NavbarProps
     return (
 
 <nav className="text-white bg-gray-900">
@@ -32,7 +33,7 @@ const Navbar: React.FC<NavbarProps> = () => {
 <div className="flex items-center mt-2 space-x-16 px-4 py-3">
     <Link href="/">
     <Image
-    src="/logo.png"
+    src="https://wsa1.pakwheels.com/assets/new-pw-logo-white-c4cd16ae34613cc1fa16d7840f34a71e.svg"
     alt="Pak-wheel"
     width={130}
     height={130}
